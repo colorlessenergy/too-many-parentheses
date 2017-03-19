@@ -9,12 +9,22 @@
 
 //input
 
-var userInput = "((2))";
+var userInput = "((((2))))";
+var finished = false;
 
 var arrInput = userInput.split("");
 
-if (arrInput[0] === "(" && arrInput[arrInput.length-1] === ")") {
-  arrInput.splice(0, 1)
-  arrInput.splice(arrInput.length-1, 1);
-  console.log(arrInput);
+while (!finished) {
+  if (arrInput[arrInput.length-2] === ")") {
+    if (arrInput[0] === "(" && arrInput[arrInput.length-1] === ")") {
+      arrInput.splice(0, 1)
+      arrInput.splice(arrInput.length-1, 1);
+      console.log(arrInput);
+    }
+  }
+
+  if (arrInput[arrInput.length-2] !== ")") {
+    finished = true;
+  }
+
 }
