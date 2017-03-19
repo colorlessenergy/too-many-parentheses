@@ -14,9 +14,7 @@ var userInput = "((2))";
 var arrInput = userInput.split("");
 
 if (arrInput[0] === "(" && arrInput[arrInput.length-1] === ")") {
-  console.log(arrInput[0]);
-  console.log(arrInput.length - 1);
-  arrInput.splice(arrInput[0], 1);
-  arrInput.splice(arrInput[arrInput.length - 3], 1);
+  arrInput.splice(0, 1)
+  arrInput.splice(arrInput.length-1, 1);
   console.log(arrInput);
 }
